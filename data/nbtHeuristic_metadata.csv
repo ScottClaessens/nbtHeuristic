@@ -1,0 +1,196 @@
+"variable","description"
+"id","Unique anonymised participant ID"
+"frameCond","Framing experimental condition"
+"timeCond","Timing experimental condition"
+"startDate","Start Date"
+"endDate","End Date"
+"recordedDate","Recorded Date"
+"durationSecs","Duration (in seconds)"
+"consent","School of Psychology
+
+Science Centre, Level 2, Building 302
+
+23 Symonds Street, Auckland Central
+
+
+
+The University of Auckland
+
+Private Bag 92019
+
+Auckland, New Zealand
+
+Telephone: +64 9 373 7599 ext. 88413
+
+Email: s.claessens@auckland.ac.nz
+
+
+
+Before beginning this study, please read the following participant information sheet carefully, and then provide informed consent for your participation.
+
+ 
+ 
+PARTICIPANT INFORMATION SHEET
+
+
+
+
+Project title: Economic decision-making
+
+Name of Principal Investigator: Dr. Scott Claessens
+
+Name of Co-investigators: Denise Mercado, Dr. Andrew Van Horn, Associate Professor Athena Aktipis, and Professor Lee Cronk
+
+
+
+Researcher introduction
+
+
+
+The research team for this project consists of Dr. Scott Claessens (Principal Investigator; University of Auckland, New Zealand), Denise Mercado (Rutgers University, United States), Dr. Andrew Van Horn (Rutgers University, United States), Associate Professor Athena Aktipis (Arizona State University, United States), and Professor Lee Cronk (Rutgers University, United States).
+
+
+
+Project description and invitation
+
+
+
+You are invited to take part in a short study looking at how people make economic decisions involving real money. You have been invited to take part as you are a participant on Prolific from the United States who speaks fluent English. Your participation in this study is voluntary. This study is funded by a research grant from the Rutgers' Center for Human Evolutionary Studies awarded to Professor Lee Cronk.
+
+
+
+Project procedures
+
+
+
+The study consists of a short survey completed through the Qualtrics survey platform (https://www.qualtrics.com). The survey contains a single task involving real money. There will also be a comprehension question and some follow-up questions.
+
+
+
+Overall, the study should take no longer than 10 minutes to complete. You will be compensated with $2.00 USD for participating, plus a bonus reward for the task (between $0.00 and $1.00). There will be a timed component to the task. You must adhere to the timed component, otherwise you will not receive your bonus reward. Compensation for the study can be expected 1-2 days after completion.
+
+
+
+There are no foreseeable risks associated with participation in this study. Participation in this study will contribute to scientific knowledge through research publications and presentations at scientific conferences. The de-identified data from this study will also be made publicly available, which will benefit the scientific community and the wider public.
+
+
+
+Data storage, retention, and future use
+
+
+
+The raw dataset containing Prolific IDs will be kept indefinitely by the Principal Investigator, stored on the hard drive of a University-owned computer. This version of the dataset will not be shared with any other parties, but is necessary to retain in case participants are to be contacted in the future. Note that we will collect demographic data about participants (age, gender, and education level) from Prolific.
+
+
+
+Three weeks after the completion of the study, the de-identified dataset (i.e., the version of the dataset with Prolific IDs and all identifying information removed) will be made publicly available online indefinitely for open science purposes. From this de-identified dataset, it will not be possible to link you back to your data.
+
+
+
+Right to withdraw from participation
+
+
+
+Your participation in this study is voluntary. You are free to decline to participate and have the right to withdraw from participation during the study without experiencing any disadvantage. If you would like to withdraw your data after completing the study, you will need to contact Dr. Scott Claessens (s.claessens@auckland.ac.nz) less than three weeks after the completion of the study. After that time, a de-identified version of the dataset will be made publicly available online and it will not be possible to withdraw your data.
+
+
+
+Anonymity and confidentiality
+
+
+
+The study is not anonymous, since the Principal Investigator can identify participants in the raw dataset through Prolific IDs. Nevertheless, the results of this study will be strictly confidential, meaning that the identity of participants will not be disclosed in any discussion or report of the research. Prolific IDs and all identifying information will be removed from the de-identified dataset, which will be made publicly available online alongside the research findings to adhere to open science practices.
+
+
+
+Contact details
+
+
+
+If you have any further questions regarding the study, please contact Dr. Scott Claessens (Email: s.claessens@auckland.ac.nz) in the School of Psychology at the University of Auckland. You may also contact Professor Niki Harré, Academic Head of the School of Psychology at the University of Auckland (Phone: +6493737599 ext. 88512; Email: n.harre@auckland.ac.nz).
+
+
+
+UAHPEC Chair contact details
+
+
+
+For any queries regarding ethical concerns you may contact the Chair, The University of Auckland Human Participants Ethics Committee, Office of Research Strategy and Integrity, The University of Auckland, Private Bag 92019, Auckland 1142. Phone: +649 3737599 ext. 83711. Email: humanethics@auckland.ac.nz.
+
+
+
+ 
+Approved by the University of Auckland Human Participants Ethics Committee on 18/05/2023 for three years. Reference Number UAHPEC26056
+
+
+
+I have read the Participant Information Sheet, have understood the nature of the research and why I have been selected. By participating in this online study, I am indicating that I understand that:
+ 
+
+ I am agreeing to take part in this research.
+ This is an online study that will take approximately 10 minutes to complete.
+ My participation is completely voluntary.
+ I am free to withdraw my participation at any time without giving a reason, and to withdraw any data traceable to me up to three weeks after my participation.
+ I will be compensated $2.00 USD for participating in the research, plus any bonus reward from the main task in the study (between $0.00 and $1.00).
+ I will not receive the bonus reward if I do not adhere to the timed component of the main task.
+ My responses will remain confidential.
+ The researchers will retrieve demographic details about me (age, gender, and education level) from Prolific.
+ Though data collected from this study may be presented at research conferences and published in scholarly outlets, my identity will never be revealed.
+
+
+Approved by the University of Auckland Human Participants Ethics Committee on 18/05/2023 for three years. Reference Number UAHPEC26056"
+"sliderTraining","In this study, you will use a slider to input your response to the main task.
+
+Before introducing you to the main task, this screen allows you to practice using a slider.
+
+The slider below allows you to choose a value between 0 and 1. To use the slider, click on the empty bar below, drag your mouse cursor to the value of your choice while holding your click, and then release your click to set the value as your response.
+
+After setting the slider value, you will still need to click the button below to finalize the submission of your response.
+
+Now please submit a hypothetical slider response for practice."
+"dgComp","You may go back to the previous page before answering this comprehension question. Please answer carefully, as an incorrect answer may affect your submission.
+
+Imagine that you decided to give $0.25 of your $1.00 to the other person. How much would you and the other person earn from the task?"
+"manipCheckPre","You may go back to the previous page before answering this comprehension question. Please answer carefully, as an incorrect answer may affect your submission.
+
+Briefly, can you restate, in your own words, what we just told you about the other person that you were matched with in the main task?"
+"dgFirstClickSecs","Time (in seconds) to first click on the Dictator Game decision screen"
+"dgLastClickSecs","Time (in seconds) to last click on the Dictator Game decision screen"
+"dgPageSubmitSecs","Time (in seconds) to page submission on the Dictator Game decision screen"
+"dgClickCount","Number of clicks on the Dictator Game decision screen"
+"dgAmountGiven","Amount given in USD in Dictator Game"
+"explanation","Thank you for submitting your decision. We have recorded the amount you chose to give to the other person.
+
+Please now complete some follow-up questions on the next few pages.
+
+Briefly, why did you choose the amount that you did?"
+"experience","How much experience have you had with economic decision-making studies (i.e., decisions involving real money) on Prolific?"
+"manipCheckPost","Briefly, can you recall what we told you about the other person that you were matched with in the main task? Try to recall as much as you can."
+"studyPurpose","If you had to guess, what do you think we were trying to study in this survey?"
+"debrief","Thank you for completing the follow-up questions.
+
+
+
+You earned $[Field-AmountEarned] in the main task. We will pay this as a bonus payment after the study.
+
+
+
+In the main task, you were not actually matched with anyone. This was part of our experimental manipulation. We were interested in how time pressure or time delay, along with perceptions of the other ""person"", would affect people's giving decisions. You were told that you were matched with either (1) a random participant from Prolific, (2) someone who lacks regular access to food and receives several of their meals at a local soup kitchen, or (3) someone who had transferred you money before the study. However, because of the infeasibility of matching you with people from very low-income backgrounds, there is actually no other random person.
+
+
+
+Instead, we will donate the money that you gave to a charity called Elijah's Promise (https://elijahspromise.org/) based in New Brunswick, New Jersey. This charity runs a local soup kitchen to help alleviate hunger amongst low-income residents.
+
+
+Please let us know below if you would like to withdraw your data and return your submission in light of the true nature of the study."
+"prolificApprovals","Prolific demographic data: Number of Prolific approvals"
+"fluentLanguages","Prolific demographic data: Languages spoken fluently"
+"age","Prolific demographic data: Age in years"
+"sex","Prolific demographic data: Sex"
+"ethnicity","Prolific demographic data: Ethnicity"
+"countryBirth","Prolific demographic data: Country of birth"
+"countryResidence","Prolific demographic data: Country of residence"
+"nationality","Prolific demographic data: Nationality"
+"language","Prolific demographic data: Language"
+"student","Prolific demographic data: Student status"
+"employment","Prolific demographic data: Employment status"

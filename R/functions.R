@@ -58,9 +58,9 @@ runPowerAnalysis <- function(nSims = 100, nPerCell = 100, seed = 1) {
 # function to simulate data
 simulateData <- function(N = 840, seed = 1) {
   # simulating from experiment DAG:
-  # timeCond -> timeSpent -> dg
-  # timeSpent <- frameCond -> dg
-  # timeSpent <- U -> dg
+  # timeCond -> dgPageSubmitSecs -> dgAmountGiven
+  # dgPageSubmitSecs <- frameCond -> dgAmountGiven
+  # dgPageSubmitSecs <- U -> dgAmountGiven
   # sim seed
   set.seed(seed)
   # randomise participants to experimental conditions
@@ -71,7 +71,7 @@ simulateData <- function(N = 840, seed = 1) {
   # set strength of confound
   k <- 0.2
   # time spent (lognormal)
-  timeSpent <- 
+  dgPageSubmitSecs <- 
     ifelse(
       # participants respond faster in the "pressure" condition and
       # participants also respond a little faster in the "need" condition
@@ -89,13 +89,13 @@ simulateData <- function(N = 840, seed = 1) {
     ifelse(
       frameCond == "Need",
       # in the need condition, those who are faster give more
-      brms::inv_logit_scaled(rnorm(N, - as.numeric(scale(log(timeSpent))) - k*u, 0.1)),
+      brms::inv_logit_scaled(rnorm(N, - as.numeric(scale(log(dgPageSubmitSecs))) - k*u, 0.1)),
       # in the debt condition, those who are slower give more
-      brms::inv_logit_scaled(rnorm(N, - 1 + as.numeric(scale(log(timeSpent))) - k*u, 0.1))
+      brms::inv_logit_scaled(rnorm(N, - 1 + as.numeric(scale(log(dgPageSubmitSecs))) - k*u, 0.1))
     )
   )
   phi <- 10
-  dg <-
+  dgAmountGiven <-
     ifelse(
       zoi == 1,
       # if zero-one inflation, choose zero or one
@@ -104,7 +104,7 @@ simulateData <- function(N = 840, seed = 1) {
       rbeta(N, shape1 = mu*phi, shape2 = (1-mu)*phi)
     )
   # full data frame
-  out <- data.frame(id = 1:N, timeCond, frameCond, timeSpent, dg)
+  out <- data.frame(id = 1:N, timeCond, frameCond, dgPageSubmitSecs, dgAmountGiven)
   return(out)
 }
 
@@ -112,7 +112,7 @@ simulateData <- function(N = 840, seed = 1) {
 compileModel1 <- function(d) {
   # model formula
   lnorm_model <- bf(
-    timeSpent ~ 0 + timeCond:frameCond,
+    dgPageSubmitSecs ~ 0 + timeCond:frameCond,
     sigma ~ 0 + timeCond:frameCond,
     family = lognormal()
   )
@@ -133,7 +133,7 @@ compileModel1 <- function(d) {
 compileModel2 <- function(d) {
   # model formula
   zoib_model <- bf(
-    dg ~ 0 + timeCond:frameCond,
+    dgAmountGiven ~ 0 + timeCond:frameCond,
     phi ~ 0 + timeCond:frameCond,
     zoi ~ 0 + timeCond:frameCond,
     coi ~ 0 + timeCond:frameCond,
@@ -157,15 +157,15 @@ compileModel2 <- function(d) {
 # compile model 3
 compileModel3 <- function(d) {
   # model formulae
-  iv_model1 <- bf(dg ~ 0 + frameCond + frameCond:log(timeSpent))
-  iv_model2 <- bf(log(timeSpent) ~ 0 + timeCond:frameCond)
+  iv_model1 <- bf(dgAmountGiven ~ 0 + frameCond + frameCond:log(dgPageSubmitSecs))
+  iv_model2 <- bf(log(dgPageSubmitSecs) ~ 0 + timeCond:frameCond)
   # compile model
   out <- brm(
     formula = iv_model1 + iv_model2 + set_rescor(TRUE),
     data = d,
     prior = c(
-      prior(normal(0, 1), class = b, resp = dg),
-      prior(normal(0, 1), class = b, resp = logtimeSpent)
+      prior(normal(0, 1), class = b, resp = dgAmountGiven),
+      prior(normal(0, 1), class = b, resp = logdgPageSubmitSecs)
     ),
     chains = 0
   )
@@ -194,7 +194,7 @@ plotModel1 <- function(d, model1, filename) {
     ggplot() +
     geom_jitter(
       data = d,
-      aes(x = timeCond, y = log(timeSpent)),
+      aes(x = timeCond, y = log(dgPageSubmitSecs)),
       size = 0.8,
       width = 0.2,
       colour = "lightgrey"
@@ -204,11 +204,12 @@ plotModel1 <- function(d, model1, filename) {
       size = 10,
       alpha = 0.5
       ) +
+    geom_hline(yintercept = log(10), linetype = "dashed") +
     facet_wrap(. ~ frameCond) +
     scale_colour_brewer() +
     scale_y_continuous(
       name = "Time spent making decision in seconds (log scale)",
-      breaks = log(c(2.5, 5, 10, 20, 40, 80)),
+      breaks = log(c(2.5, 5, 10, 20, 40, 80, 160, 320, 640, 1280)),
       labels = function(x) exp(x)
       ) +
     xlab("Timing condition") +
@@ -241,7 +242,7 @@ plotModel2 <- function(d, model2, filename) {
     ggplot() +
     geom_jitter(
       data = d,
-      aes(x = timeCond, y = dg),
+      aes(x = timeCond, y = dgAmountGiven),
       size = 0.8,
       width = 0.2,
       colour = "lightgrey"
@@ -254,7 +255,7 @@ plotModel2 <- function(d, model2, filename) {
     facet_wrap(. ~ frameCond) +
     scale_colour_brewer() +
     scale_y_continuous(
-      name = "Proportion given in Dictator Game",
+      name = "Amount given in Dictator Game (USD)",
       limits = c(0, 1)
     ) +
     xlab("Timing condition") +
@@ -275,13 +276,13 @@ plotModel3 <- function(d, model3, filename) {
       plot = FALSE
     )[[3]] +
     scale_y_continuous(
-      name = "Proportion given in Dictator Game",
+      name = "Amount given in Dictator Game (USD)",
       breaks = c(0, 0.25, 0.5, 0.75, 1),
       limits = c(-0.15, 1.15)
     ) +
     geom_hline(yintercept = 0, linetype = "dashed") +
     geom_hline(yintercept = 1, linetype = "dashed") +
-    scale_x_continuous(name = "Time spent making decision in seconds") +
+    scale_x_log10(name = "Time spent making decision in seconds") +
     guides(
       colour = guide_legend(title = "Framing"),
       fill = guide_legend(title = "Framing")
