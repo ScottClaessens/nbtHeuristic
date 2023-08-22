@@ -363,3 +363,42 @@ plotSampleProlific <- function(d) {
   ggsave(out, filename = "figures/analysis/sample.pdf", height = 5, width = 7)
   return(out)
 }
+
+# plot probability of giving nothing/everything across all conditions
+plotProb01 <- function(post2, type) {
+  # get probability of giving nothing/everything in dictator game
+  # prob nothing = zoi prob * (1 - coi prob)
+  # prob everything = zoi prob * coi prob
+  getProb <- function(timeCond, frameCond) {
+    suffix <- paste0("timeCond", timeCond, ":frameCond", frameCond)
+    zoi <- inv_logit_scaled(post2[,paste0("b_zoi_", suffix)])
+    coi <- inv_logit_scaled(post2[,paste0("b_coi_", suffix)])
+    if (type == "nothing") {
+      out <- zoi * (1 - coi)
+    } else if (type == "everything") {
+      out <- zoi * coi
+    }
+    return(out)
+  }
+  # plot for each condition
+  out <-
+    expand_grid(
+      timeCond = c("Delay","Pressure"),
+      frameCond = c("Control","Debt","Need")
+    ) %>%
+    mutate(post = map2(timeCond, frameCond, getProb)) %>%
+    unnest(post) %>%
+    ggplot() +
+    stat_halfeye(aes(y = post, x = timeCond)) +
+    facet_grid(. ~ frameCond) +
+    labs(
+      x = "Timing condition",
+      y = paste0("Probability of giving ", type, "\nin Dictator Game")
+      ) +
+    ylim(c(0, 0.5)) +
+    theme_classic()
+  # save
+  ggsave(out, filename = paste0("figures/analysis/prob", str_to_title(type), ".pdf"),
+         height = 4, width = 5)
+  return(out)
+}

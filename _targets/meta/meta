@@ -32,6 +32,9 @@ plot3|stem|2046169a747c5035|af2b96f2278fc9c8|c26e3096107ac3ab|-1544581898||t1959
 plotModel1|function|a684d9bf2f58831c|||||||||||||||
 plotModel2|function|edcf11f77e38e7f2|||||||||||||||
 plotModel3|function|a3a07ee1ce01b879|||||||||||||||
+plotProb01|function|7c5654dffad7a05d|||||||||||||||
+plotProbEverything|stem|9761e1ba75e2a5b6|d95f37f0c2aad3cc|b8b58a282897cde0|-1334431533||t19591.9809040468s|89b42b6921ed61c7|1436003|rds|local|vector|||1.04||
+plotProbNothing|stem|0e4c2b093eae338e|d59451f7af19f8e6|b8b58a282897cde0|1119282085||t19591.9808896758s|89292e227fc9e394|1429519|rds|local|vector|||0.97|1m22mUsing the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.36mℹ39m Please use the linewidth aesthetic instead.|
 plotSample|stem|20ca52785c503c6a|6c6657d2c62b3591|003a6c1051d80f28|-1989077897||t19591.9449004725s|147a4c23aaf52d67|2578855|rds|local|vector|||0.86||
 plotSampleProlific|function|1849ebb1890c38e8|||||||||||||||
 plotSim1|stem|9b01f063c5a64783|92dd1fec10d0abf3|9f9beaa186d80a63|1047072841||t19591.0703389162s|11faf5494716cc50|4455457|rds|local|vector|||1.42||

@@ -73,6 +73,10 @@ list(
   tar_target(estimand3.1, post3$`b_dgAmountGiven_frameCondControl:logdgPageSubmitSecs`),
   tar_target(estimand3.2, post3$`b_dgAmountGiven_frameCondNeed:logdgPageSubmitSecs`),
   tar_target(estimand3.3, post3$`b_dgAmountGiven_frameCondDebt:logdgPageSubmitSecs`),
+  # exploratory plots
+  # probability of giving nothing/everything
+  tar_target(plotProbNothing, plotProb01(post2, type = "nothing")),
+  tar_target(plotProbEverything, plotProb01(post2, type = "everything")),
   
   #### Print session info ####
   
