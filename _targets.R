@@ -3,7 +3,7 @@ library(tarchetypes)
 library(tidyverse)
 source("R/functions.R")
 options(tidyverse.quiet = TRUE)
-tar_option_set(packages = c("brms", "readxl", "tidybayes", "tidyverse"))
+tar_option_set(packages = c("brms", "cowplot", "readxl", "tidybayes", "tidyverse"))
 
 # full workflow
 list(
@@ -51,6 +51,8 @@ list(
   # load data
   tar_target(fileData, "data/nbtHeuristic_cleanData.csv", format = "file"),
   tar_target(d, read_csv(fileData)),
+  # plot sample
+  tar_target(plotSample, plotSampleProlific(d)),
   # fit models
   tar_target(m1, update(compiledModel1, newdata = d, chains = 4, cores = 4, seed = 1)),
   tar_target(m2, update(compiledModel2, newdata = d, chains = 4, cores = 4, seed = 1)),

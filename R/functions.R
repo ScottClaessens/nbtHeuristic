@@ -300,3 +300,66 @@ plotModel3 <- function(d, model3, filename) {
   ggsave(filename = filename, plot = out, height = 4, width = 5)
   return(out)
 }
+
+# plot sample
+plotSampleProlific <- function(d) {
+  # age
+  pA <- 
+    d %>%
+    drop_na(age) %>%
+    ggplot(aes(x = age)) +
+    geom_histogram(binwidth = 2, fill = "lightsteelblue2") +
+    labs(x = "Age (years)", y = "Count") +
+    theme_classic()
+  # sex
+  pB <-
+    d %>%
+    filter(!is.na(sex) & sex != "Prefer not to say") %>%
+    ggplot(aes(x = sex)) +
+    geom_bar(fill = "lightsteelblue2") +
+    labs(x = "Sex", y = "Count") +
+    theme_classic()
+  # ethnicity
+  pC <-
+    d %>%
+    drop_na(ethnicity) %>%
+    mutate(ethnicity = factor(ethnicity, levels = c("White","Asian","Black","Mixed","Other"))) %>%
+    ggplot(aes(x = ethnicity)) +
+    geom_bar(fill = "lightsteelblue2") +
+    labs(x = "Ethnicity", y = "Count") +
+    theme_classic()
+  # student
+  pD <-
+    d %>%
+    drop_na(student) %>%
+    mutate(student = factor(student, levels = c("Yes","No"))) %>%
+    ggplot(aes(x = student)) +
+    geom_bar(fill = "lightsteelblue2") +
+    labs(x = "Student", y = "Count") +
+    theme_classic()
+  # employment
+  employmentRecode <- c(
+    "Full-Time" = "Full-time",
+    "Part-Time" = "Part-time",
+    "Due to start a new job within the next month" = "Starting job",
+    "Not in paid work (e.g. homemaker', 'retired or disabled)" = "Not in work",
+    "Unemployed (and job seeking)" = "Unemployed",
+    "Other" = "Other"
+  )
+  pE <-
+    d %>%
+    drop_na(employment) %>%
+    mutate(employment = factor(employmentRecode[employment], levels = employmentRecode)) %>%
+    ggplot(aes(x = employment)) +
+    geom_bar(fill = "lightsteelblue2") +
+    labs(x = "Employment", y = "Count") +
+    theme_classic() +
+    theme(axis.text.x = element_text(size = 7.5))
+  # put together
+  top <- plot_grid(pA, pE, nrow = 1, rel_widths = c(0.6, 1))
+  bot <- plot_grid(pB, pC, pD, nrow = 1, rel_widths = c(0.7, 1, 0.7))
+  out <- plot_grid(top, bot, nrow = 2)
+  # save
+  ggsave(out, filename = "figures/analysis/sample.pdf", height = 5, width = 7)
+  return(out)
+}

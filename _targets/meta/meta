@@ -32,6 +32,8 @@ plot3|stem|2046169a747c5035|af2b96f2278fc9c8|c26e3096107ac3ab|-1544581898||t1959
 plotModel1|function|a684d9bf2f58831c|||||||||||||||
 plotModel2|function|edcf11f77e38e7f2|||||||||||||||
 plotModel3|function|a3a07ee1ce01b879|||||||||||||||
+plotSample|stem|20ca52785c503c6a|6c6657d2c62b3591|003a6c1051d80f28|-1989077897||t19591.9449004725s|147a4c23aaf52d67|2578855|rds|local|vector|||0.86||
+plotSampleProlific|function|1849ebb1890c38e8|||||||||||||||
 plotSim1|stem|9b01f063c5a64783|92dd1fec10d0abf3|9f9beaa186d80a63|1047072841||t19591.0703389162s|11faf5494716cc50|4455457|rds|local|vector|||1.42||
 plotSim2|stem|dfa19ba01b467f96|94da9dbee61a3c02|5f9e44de93cf72bf|1961065789||t19591.0833738334s|92cc7d0387fbd3e1|5269368|rds|local|vector|||1.36|1m22mRemoved 112 rows containing missing values geom_point.|
 plotSim3|stem|8d25d33f17556494|6e742901b9fe47e0|c0948da5d4eeebad|1661196670||t19591.0835224821s|4d3d8bd7ec87e217|5539290|rds|local|vector|||4.95||
