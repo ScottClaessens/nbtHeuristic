@@ -205,7 +205,7 @@ plotModel1 <- function(d, model1, filename) {
       alpha = 0.5
       ) +
     geom_hline(yintercept = log(10), linetype = "dashed") +
-    facet_wrap(. ~ frameCond) +
+    facet_wrap(. ~ fct_relevel(frameCond, c("Control","Need","Debt"))) +
     scale_colour_brewer() +
     scale_y_continuous(
       name = "Time spent making decision in seconds (log scale)",
@@ -252,7 +252,7 @@ plotModel2 <- function(d, model2, filename) {
       size = 10,
       alpha = 0.5
     ) +
-    facet_wrap(. ~ frameCond) +
+    facet_wrap(. ~ fct_relevel(frameCond, c("Control","Need","Debt"))) +
     scale_colour_brewer() +
     scale_y_continuous(
       name = "Amount given in Dictator Game (USD)",
@@ -283,6 +283,8 @@ plotModel3 <- function(d, model3, filename) {
     geom_hline(yintercept = 0, linetype = "dashed") +
     geom_hline(yintercept = 1, linetype = "dashed") +
     scale_x_log10(name = "Time spent making decision in seconds") +
+    scale_fill_discrete(limits = c("Control", "Need", "Debt")) +
+    scale_colour_discrete(limits = c("Control", "Need", "Debt")) +
     guides(
       colour = guide_legend(title = "Framing"),
       fill = guide_legend(title = "Framing")
@@ -383,8 +385,8 @@ plotProb01 <- function(post2, type) {
   # plot for each condition
   out <-
     expand_grid(
-      timeCond = c("Delay","Pressure"),
-      frameCond = c("Control","Debt","Need")
+      timeCond = factor(c("Delay","Pressure"), levels = c("Delay","Pressure")),
+      frameCond = factor(c("Control","Need","Debt"), levels = c("Control","Need","Debt"))
     ) %>%
     mutate(post = map2(timeCond, frameCond, getProb)) %>%
     unnest(post) %>%

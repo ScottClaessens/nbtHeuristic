@@ -50,7 +50,7 @@ list(
   
   # load data
   tar_target(fileData, "data/nbtHeuristic_cleanData.csv", format = "file"),
-  tar_target(d, read_csv(fileData)),
+  tar_target(d, read_csv(fileData, locale = locale(tz = "US/Mountain"))),
   # plot sample
   tar_target(plotSample, plotSampleProlific(d)),
   # fit models
@@ -77,6 +77,11 @@ list(
   # probability of giving nothing/everything
   tar_target(plotProbNothing, plotProb01(post2, type = "nothing")),
   tar_target(plotProbEverything, plotProb01(post2, type = "everything")),
+  
+  #### Analysis report ####
+  
+  # knit analysis report
+  tar_render(report, "report.Rmd"),
   
   #### Print session info ####
   

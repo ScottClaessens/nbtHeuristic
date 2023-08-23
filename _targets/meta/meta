@@ -6,7 +6,7 @@ compileModel1|function|57b7d06ed0bed2db|||||||||||||||
 compileModel2|function|97da528fbaa90209|||||||||||||||
 compileModel3|function|d79b233270652847|||||||||||||||
 cond|stem|ffa8a275620b1607|8218d5f634cf10cc|3f06b92197aa2786|-159380592||t19591.0542212757s|dd56a5971d025bfa|192|rds|local|vector|||4.53||
-d|stem|b8502b867a74e652|bf18fb734a118e88|d8fd10b6fa739c20|592496261||t19591.0618844311s|2fcb85a04345f660|112736|rds|local|vector|||0.71||
+d|stem|9a9a52245b43dc8b|a70d172e1ccaa7d5|9117df09df049338|592496261||t19592.001283452s|21ee07e43e3a44b5|112811|rds|local|vector|||0.39||
 dSim|stem|2aea877975cd4a1b|b266f2167e9cae95|2e8586f93788a7bf|-398301196||t19591.0529530246s|6696597270c3fb08|12599|rds|local|vector|||6.08||
 estimand2.1|stem|4ac995b6f18f99b0|3dc298720eea32be|0b08344a91c9f760|767970185||t19591.0658783249s|e896dcab30a1191a|30148|rds|local|vector|||0||
 estimand2.2|stem|6600d1b2e25e7a5f|5fc762f13413234d|0b08344a91c9f760|-787869182||t19591.0658786134s|86506535b24c62a8|30016|rds|local|vector|||0||
@@ -21,32 +21,33 @@ estimandSim3.1|stem|794be3614d98cc38|0c0b4adcda16f65c|bba6b6be5e5b02ae|179432598
 estimandSim3.2|stem|794be3614d98cc38|ba2e6b7d51254dea|bba6b6be5e5b02ae|-1868166847||t19591.0580062758s|a1c456b03adbfbf8|44|rds|local|vector|||0||
 estimandSim3.3|stem|794be3614d98cc38|2a81f18f21c2aa0a|bba6b6be5e5b02ae|-32185307||t19591.0580065067s|a1c456b03adbfbf8|44|rds|local|vector|||0||
 fileData|stem|7369d1c5a297ab4e|b8735ae4c1d248a6|ef46db3751d8e999|-1990176534|data/nbtHeuristic_cleanData.csv|t19591.0477943484s|1cbfbe311b2aedbf|633210|file|local|vector|||3.56||
-fitted2|stem|5ed49a424b1d701d|4f90c2b9be597fb5|3ae04e97ffc62557|1187122270||t19591.065776932s|dea7a76bb67ff0d5|177352|rds|local|vector|||0.63||
+fitted2|stem|5ed49a424b1d701d|4f90c2b9be597fb5|d9f851041a9a612d|1187122270||t19592.0034062355s|dea7a76bb67ff0d5|177352|rds|local|vector|||0.53||
 fittedSim2|stem|e8db8dd9a61b78fa|68a2aa8125dd245c|cc89d40674160a95|907913397||t19591.0579083659s|a32dafe8f0a2d028|177621|rds|local|vector|||0.85||
-m1|stem|69a284ae2a23f9a4|74108fd4a4df29d6|3ee3bcaa27887604|-324215237||t19591.064125048s|62c14fe4c4bba085|2900593|rds|local|vector|||15.81||
-m2|stem|a249723cb2632dbb|0259b8eb6f3810e0|371ac2a56c14fe51|-1313740730||t19591.0646210179s|2ae2dd9c8ec9ffc6|3736744|rds|local|vector|||41.72||
-m3|stem|d0a967e62fac075b|c8a9c035ff4d8610|4bdc5d0987eae18e|2146927826||t19591.0657425348s|0adc2eb454330fe5|3402620|rds|local|vector|||95.67||
-plot1|stem|62672d1fae39e916|c7660fc6f6171246|3529b303ab15a0c5|1351247401||t19591.0703075713s|a2d2941a23383c5a|4331812|rds|local|vector|||2.09|1m22mUsing the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.36mℹ39m Please use the linewidth aesthetic instead.|
-plot2|stem|1c889f6b3a66d627|5f5179307f99b196|6b7348e0e61637d0|-777164687||t19591.0833455642s|66c34fe933265393|5170326|rds|local|vector|||1.72|1m22mRemoved 157 rows containing missing values geom_point.. 1m22mUsing the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.36mℹ39m Please use the linewidth aesthetic instead.|
-plot3|stem|2046169a747c5035|af2b96f2278fc9c8|c26e3096107ac3ab|-1544581898||t19591.0834525839s|fcdedbad4db2aee0|4970021|rds|local|vector|||5.53||
-plotModel1|function|a684d9bf2f58831c|||||||||||||||
-plotModel2|function|edcf11f77e38e7f2|||||||||||||||
-plotModel3|function|a3a07ee1ce01b879|||||||||||||||
-plotProb01|function|7c5654dffad7a05d|||||||||||||||
-plotProbEverything|stem|9761e1ba75e2a5b6|d95f37f0c2aad3cc|b8b58a282897cde0|-1334431533||t19591.9809040468s|89b42b6921ed61c7|1436003|rds|local|vector|||1.04||
-plotProbNothing|stem|0e4c2b093eae338e|d59451f7af19f8e6|b8b58a282897cde0|1119282085||t19591.9808896758s|89292e227fc9e394|1429519|rds|local|vector|||0.97|1m22mUsing the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.36mℹ39m Please use the linewidth aesthetic instead.|
-plotSample|stem|20ca52785c503c6a|6c6657d2c62b3591|003a6c1051d80f28|-1989077897||t19591.9449004725s|147a4c23aaf52d67|2578855|rds|local|vector|||0.86||
+m1|stem|94e5e4c23ba9eaea|74108fd4a4df29d6|dec7cd0c8fc520cb|-324215237||t19592.0024079203s|378fc667d0af457a|2900572|rds|local|vector|||12.41||
+m2|stem|d7504ae49c17d4c7|0259b8eb6f3810e0|fc249d837dba90be|-1313740730||t19592.002715883s|d04395bd802daa19|3736734|rds|local|vector|||25.84||
+m3|stem|1d765de871dbcee1|c8a9c035ff4d8610|2ac2c6e62b584f61|2146927826||t19592.0033593698s|23a0e684410a51fc|3402624|rds|local|vector|||54.72||
+plot1|stem|b817bad8ab35b504|c7660fc6f6171246|028a41f3871515cb|1351247401||t19592.0529719047s|5d87699e7426a146|4332797|rds|local|vector|||1.18||
+plot2|stem|83bd7769a3cba627|5f5179307f99b196|2b50105287873b9e|-777164687||t19592.0530007564s|15b317cef8f736fe|5172386|rds|local|vector|||1.22|1m22mRemoved 157 rows containing missing values geom_point.|
+plot3|stem|8d2fc97f6a417eef|af2b96f2278fc9c8|0fd3821526d082dd|-1544581898||t19592.044216515s|24e9d594a4fbb704|4978409|rds|local|vector|||4.89||
+plotModel1|function|71d7097ea4b5ad44|||||||||||||||
+plotModel2|function|7f1bf66e1eca8df2|||||||||||||||
+plotModel3|function|4ec3b38b9703b837|||||||||||||||
+plotProb01|function|236b1f743c2b3a3d|||||||||||||||
+plotProbEverything|stem|f6dd3108cd86ffcf|d95f37f0c2aad3cc|1366f4d5c4c6fb71|-1334431533||t19592.0442868907s|076481a9c1209923|1429560|rds|local|vector|||0.76||
+plotProbNothing|stem|bb9e46a80729f841|d59451f7af19f8e6|1366f4d5c4c6fb71|1119282085||t19592.0442964544s|7f936bfbf2e0f09c|1424466|rds|local|vector|||0.69||
+plotSample|stem|7d10589ada9edc1e|6c6657d2c62b3591|19e05b2b2a9ff2e6|-1989077897||t19592.0033773981s|f6786f099fc0f690|2579877|rds|local|vector|||0.82||
 plotSampleProlific|function|1849ebb1890c38e8|||||||||||||||
-plotSim1|stem|9b01f063c5a64783|92dd1fec10d0abf3|9f9beaa186d80a63|1047072841||t19591.0703389162s|11faf5494716cc50|4455457|rds|local|vector|||1.42||
-plotSim2|stem|dfa19ba01b467f96|94da9dbee61a3c02|5f9e44de93cf72bf|1961065789||t19591.0833738334s|92cc7d0387fbd3e1|5269368|rds|local|vector|||1.36|1m22mRemoved 112 rows containing missing values geom_point.|
-plotSim3|stem|8d25d33f17556494|6e742901b9fe47e0|c0948da5d4eeebad|1661196670||t19591.0835224821s|4d3d8bd7ec87e217|5539290|rds|local|vector|||4.95||
-post1|stem|0a40c28d3d836e52|41d9d59dcb093665|82b4ce6872745ecd|-2033010937||t19591.0657691791s|97daaf42be354d68|377256|rds|local|vector|||0|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
-post2|stem|10de0841d9e986a6|f27479b9c1ad60ef|4b96eb6e6595d5cb|-1792584784||t19591.0658028307s|a3475c18c9c2b8ca|751363|rds|local|vector|||0.01|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
-post3|stem|c980ea6cfee3d96e|62b61aa79980b17d|7c58c5d4637a7f44|-786117718||t19591.0658038115s|2897d568ae329455|472261|rds|local|vector|||0.02|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
+plotSim1|stem|3da3d51996fd3092|92dd1fec10d0abf3|46cb7406e235c020|1047072841||t19592.0529166866s|10b20c607b1dd041|4456485|rds|local|vector|||1.37|1m22mUsing the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.36mℹ39m Please use the linewidth aesthetic instead.|
+plotSim2|stem|61c86c92e42589d7|94da9dbee61a3c02|0f2c9fd63453bd64|1961065789||t19592.0529446286s|88c0692b3c48a91c|5270084|rds|local|vector|||1.22|1m22mRemoved 112 rows containing missing values geom_point.|
+plotSim3|stem|5d5c870cfd5b3817|6e742901b9fe47e0|019bfa7081f3ee63|1661196670||t19592.0440915999s|78dabb99f40c94f4|5547521|rds|local|vector|||5.39||
+post1|stem|0a40c28d3d836e52|41d9d59dcb093665|3462700c694aed5c|-2033010937||t19592.0033996553s|97daaf42be354d68|377256|rds|local|vector|||0.02|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
+post2|stem|10de0841d9e986a6|f27479b9c1ad60ef|c9863c3f5fba1c42|-1792584784||t19592.0034285529s|a3475c18c9c2b8ca|751363|rds|local|vector|||0|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
+post3|stem|c980ea6cfee3d96e|62b61aa79980b17d|641f0f59fa0ac89b|-786117718||t19592.0034967631s|2897d568ae329455|472261|rds|local|vector|||0|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
 postSim1|stem|2e9dbac016b6cc20|4c4d571c2c76e78d|29797f5d3bfd0ec1|1736448501||t19591.0578982032s|9d22dbbac9c6adce|378294|rds|local|vector|||0.01|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
 postSim2|stem|008d2a1eb2b77f69|cbe794778686fe32|7fbc449e6a41c600|-1794214639||t19591.0579358913s|9ae0d6cb793171d4|747309|rds|local|vector|||0.01|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
 postSim3|stem|6b950c16e66797a2|39797f55f8b36f89|1856abc0f9fee7e0|-1109244228||t19591.0580052831s|e3f0878b33ef85d1|471554|rds|local|vector|||0.02|Method posterior_samples is deprecated. Please see as_draws for recommended alternatives.|
 power|stem|66c63952517eb375|79888bacc081f817|a1f061cac95774ec|-1621175796||t19591.0609601314s|b6d2e014b07bc296|51|rds|local|vector|||112.84||
+report|stem|e7ea3a005ec3a39b|66345c8aaeaa6118|7a8b14c3b5ca61b8|-237041703|report.pdf*report.Rmd|t19592.0908445905s|5b4796ff8bf0dec2|300347|file|local|vector|||7.03|Using the size aesthetic with geom_segment was deprecated in ggplot2 3.4.0.i Please use the linewidth aesthetic instead.. Removed 166 rows containing missing values geom_point.|
 runPowerAnalysis|function|4374d1cc44407b7c|||||||||||||||
 sessionInfo|stem|794be3614d98cc38|74c06756c0452f1d|696eeb75af4c39be|-1689045739||t19591.0529550753s|a1c456b03adbfbf8|44|rds|local|vector|||0.15||
 simModel1|stem|7c3668fecc48128c|319f8901265e954c|c3b30cde55ed5ab0|-764642290||t19591.0564515954s|ff0bd0f3f9497c4a|3526184|rds|local|vector|||18.31||
