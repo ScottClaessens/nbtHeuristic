@@ -172,6 +172,31 @@ compileModel3 <- function(d) {
   return(out)
 }
 
+# compile model 4
+compileModel4 <- function(d) {
+  # model formula
+  zoib_model <- bf(
+    dgAmountGiven ~ 0 + frameCond,
+    phi ~ 0 + frameCond,
+    zoi ~ 0 + frameCond,
+    coi ~ 0 + frameCond,
+    family = zero_one_inflated_beta()
+  )
+  # compile model
+  out <- brm(
+    formula = zoib_model,
+    data = d,
+    prior = c(
+      prior(normal(0, 2), class = b),
+      prior(normal(2, 1), class = b, dpar = phi),
+      prior(normal(0, 2), class = b, dpar = zoi),
+      prior(normal(0, 2), class = b, dpar = coi)
+    ),
+    chains = 0
+  )
+  return(out)
+}
+
 # plot results of model 1
 plotModel1 <- function(d, model1, filename) {
   # experimental conditions
@@ -300,6 +325,48 @@ plotModel3 <- function(d, model3, filename) {
     )
   # save
   ggsave(filename = filename, plot = out, height = 4, width = 5)
+  return(out)
+}
+
+# plot results of model 4
+plotModel4 <- function(d, model4, filename) {
+  # experimental conditions
+  conditions <- tibble(frameCond = c("Control","Need","Debt"))
+  # get posterior predictions on outcome scale
+  post <-
+    fitted(
+      model4,
+      newdata = conditions,
+      summary = FALSE
+    )
+  # plot results
+  out <-
+    conditions %>%
+    mutate(post = apply(post, 2, function(x) as.data.frame(x))) %>%
+    unnest(post) %>%
+    ggplot() +
+    geom_jitter(
+      data = d,
+      aes(x = fct_relevel(frameCond, c("Control","Need","Debt")), y = dgAmountGiven),
+      size = 0.8,
+      width = 0.2,
+      colour = "lightgrey"
+    ) +
+    stat_interval(
+      aes(x = frameCond, y = x),
+      size = 10,
+      alpha = 0.5
+    ) +
+    scale_colour_brewer() +
+    scale_y_continuous(
+      name = "Amount given in Dictator Game (USD)",
+      limits = c(0, 1)
+    ) +
+    xlab("Framing condition") +
+    theme_classic() +
+    theme(legend.position = "none")
+  # save
+  ggsave(filename = filename, plot = out, height = 4, width = 4)
   return(out)
 }
 

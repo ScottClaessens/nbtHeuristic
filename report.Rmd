@@ -50,7 +50,9 @@ table(d$experience)
 ```
 `r round(mean(d$dgComp == "You would earn $0.75, and the other person would earn $0.25"), 2)*100`% of participants correctly answered the comprehension question for the Dictator Game. A cursory look at the open-ended manipulation checks suggested that participants could accurately recall the person they were told about in the framing manipulation. Open-ended responses also suggested that many participants were able to guess in advance that our study involved deception and that the "other person" was not real --- this is a potential limitation with our design.
 
-# Timing manipulation check
+# Preregistered analyses
+
+## Timing manipulation check
 
 In our first pre-registered analysis, we aimed to test whether the experimental manipulation of time-pressure vs. time-delay worked as expected. In the time-pressure conditions, participants are asked to respond to the Dictator Game in less than ten seconds. In the time-delay conditions, they must wait for ten seconds before responding.
 
@@ -62,7 +64,7 @@ tar_read(plot1)
 
 In general, participants obeyed the timing constraint in both conditions. Some participants were slightly fast/slow, but we do not remove these from future analyses to avoid biasing our sample through post-treatment selection.
 
-# Hypothesis 1
+## Hypothesis 1
 
 To test Hypothesis 1a, 1b, and 1c, we modelled the average amount given in the Dictator Game in all six conditions. We expected that:
 
@@ -86,7 +88,7 @@ In contrast to Hypothesis 1b, we found that participants gave more in the _time-
 
 In contrast to Hypothesis 1c, we found no difference in the amount given between the timing conditions for the debt framing. On average, participants gave $`r format(round(median(-estimand2.3), 2), nsmall = 2)` (95% CI [`r format(round(quantile(-estimand2.3, 0.025), 2), nsmall = 2)` `r format(round(quantile(-estimand2.3, 0.975), 2), nsmall = 2)`]) more in the time-delay condition compared to the time-pressure condition after seeing the debt framing.
 
-# Hypothesis 2
+## Hypothesis 2
 
 To test Hypothesis 2a, 2b, and 2c, we used an instrumental variable model to estimate the causal effect of time spent making the decision on the amount given in the Dictator Game, for each of the three framing conditions. We expected that:
 
@@ -110,7 +112,7 @@ In contrast to Hypothesis 2b, the amount of time spent was positively causally r
 
 In contrast to Hypothesis 2c, the amount of time spent was causally unrelated to the amount given in the Dictator Game for the debt framing (median posterior slope = `r round(median(estimand3.3), 2)`, 95% CI [`r round(quantile(estimand3.3, 0.025), 2)` `r round(quantile(estimand3.3, 0.975), 2)`]).
 
-# Summary of results
+## Summary of preregistered analyses
 
 To summarise, our main pre-registered hypotheses were not borne out by the data. What do these results tell us about the psychology underlying need-based and debt-based transfers?
 
@@ -119,3 +121,29 @@ For need-based transfers, forcing participants to respond quickly actually _redu
 For debt-based transfers, time pressure and delay did not appear to causally affect participants' giving decisions. It may be that participants had worked out that the other person was "owed" \$0.50 before even getting to the Dictator Game screen (they are owed this amount because they initially transferred \$0.25 to the participant, which was multiplied by four, so they should receive half back to be fair).
 
 The fact that we also found no effect of timing in the control condition adds to the mixed literature on social heuristics and prosociality.
+
+# Exploratory analyses
+
+## Total causal effect of framing condition
+
+It is worth checking whether prosociality in the Dictator Game varies between the framing conditions, regardless of time pressure vs. time delay. To estimate this total causal effect, we fit the same model used to test Hypothesis 1 but include framing condition as the sole predictor. The results of the model are shown below, with blue shaded intervals representing 50%, 80%, and 95% credible intervals for model-predicted averages.
+
+```{r fig.height=4, fig.width=4, warning=FALSE}
+tar_read(plot4)
+```
+
+```{r}
+tar_load(c(fitted4, estimand4.1, estimand4.2, estimand4.3))
+```
+
+Collapsing over the timing conditions, participants gave, on average:
+
+- $`r format(round(median(fitted4[,1]), 2), nsmall = 2)` (95% CI [`r format(round(quantile(fitted4[,1], 0.025), 2), nsmall = 2)` `r format(round(quantile(fitted4[,1], 0.975), 2), nsmall = 2)`]) in the control condition
+- $`r format(round(median(fitted4[,2]), 2), nsmall = 2)` (95% CI [`r format(round(quantile(fitted4[,2], 0.025), 2), nsmall = 2)` `r format(round(quantile(fitted4[,2], 0.975), 2), nsmall = 2)`]) in the need condition
+- $`r format(round(median(fitted4[,3]), 2), nsmall = 2)` (95% CI [`r format(round(quantile(fitted4[,3], 0.025), 2), nsmall = 2)` `r format(round(quantile(fitted4[,3], 0.975), 2), nsmall = 2)`]) in the debt condition
+
+These averages differ between conditions:
+
+- Participants gave $`r format(round(median(-estimand4.1), 2))` (95% CI [`r format(round(quantile(-estimand4.1, 0.025), 2))` `r format(round(quantile(-estimand4.1, 0.975), 2))`]) more in the need condition than in the control condition
+- Participants gave $`r format(round(median(-estimand4.2), 2))` (95% CI [`r format(round(quantile(-estimand4.2, 0.025), 2))` `r format(round(quantile(-estimand4.2, 0.975), 2))`]) more in the need condition than in the debt condition
+- Participants gave $`r format(round(median(estimand4.3), 2))` (95% CI [`r format(round(quantile(estimand4.3, 0.025), 2))` `r format(round(quantile(estimand4.3, 0.975), 2))`]) more in the debt condition than in the control condition
